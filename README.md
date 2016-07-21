@@ -5,7 +5,8 @@
 #Installation
 
 Als erstes benötigen wir composer. Unter Mac am einfachsten mit Homebrew zu installieren "brew install homebrew/php/composer"
-Dann benötigen wir das git Projekt (clone)
+Dann benötigen wir das git Projekt (clone).
+Im root verzeichnis starten wir dann über das Terminal composer install um alle Dependencies runterzuladen.
 
 Der apache Server sollte so eingestellt sein, dass er auf den public Ordner des Projekts zeigt.
 (bei weißer Seite chown -R www-data:www-data auf die Ordner public/ /storage /bootstrap/cache)
