@@ -13,6 +13,11 @@ Der apache Server sollte so eingestellt sein, dass er auf den public Ordner des 
 Theoretisch sollte die Webapplikation nun bereits laufen - zumindest bei der / Seite.
 Als nächstes bearbeiten wir die /config/database.php Datei und geben die Postgresql daten an.
 
+Um die Datenbank tabellen anlegen zu können wechseln wir im terminal zum root verzeichnis und geben ein:
+php artisan migrate
+
+Damit sollten alle DB Tables angelegt werden.
+
 Im nächsten Schritt klicken wir in der Applikation auf import (ich hatte selbst meinen Apache nicht eingestellt ich hoffe die routen stimmen alle) ... Der Import dauert auf Grund der riesen TrackList.xml Datei eine weile... PHP sollte so eingestellt sein, dass es niemals stoppt damit der import durchläuft.
 
 Anschließend sind die Daten importiert und man kann sich die listen aller manufacturer, labels, tracks im einzelnen ansehen... sie sind alle paginiert und nach ihren IDs durchsuchbar ...
