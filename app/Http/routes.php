@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/import', 'ImportController@import');
+Route::get('/tracks', 'TrackController@index');
+
+
+Route::get('/home', 'HomeController@index');

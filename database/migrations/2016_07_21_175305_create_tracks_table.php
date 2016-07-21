@@ -13,13 +13,14 @@ class CreateTracksTable extends Migration
     public function up()
     {
         Schema::create('tracks', function (Blueprint $table) {
-            $table->increments('manr');
+            $table->increments('id');
+            $table->string('manr');
             $table->string('track');
-            $table->bigInteger('labelcode');
+            $table->string('labelcode');
             $table->string('label');
             $table->string('isrc');
-            $table->bigInteger('catalogno');
-            $table->bigInteger('ean');
+            $table->string('catalogno');
+            $table->string('ean');
             $table->string('release_date');
             $table->string('composer');
 
