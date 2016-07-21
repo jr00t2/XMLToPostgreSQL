@@ -10,7 +10,7 @@ class Label extends Model
 
     public static $filename = 'LabelList.xml';
 
-    protected $fillable = array('labelcode', 'labelname', 'labelshortname', 'gvlmandant', 'musikherkunft');
+    protected $fillable = array('labelId','labelcode', 'labelname', 'labelshortname', 'gvlmandant', 'musikherkunft');
 
     public static function listFromXml() {
         $xml = simplexml_load_file('xml/LabelList.xml', "SimpleXMLElement", LIBXML_NOCDATA);
@@ -20,7 +20,7 @@ class Label extends Model
         $labels = [];
         foreach($xmldata as $xml) {
             $label = [];
-            $label['id'] = $xml['ID'];
+            $label['labelId'] = ($xml['ID'] != null) ?$xml['ID'] : "" ;
             $label['labelcode'] = $xml['Labelcode'];
             $label['labelname'] = $xml['Labelname'];
             $label['labelshortname'] = ($xml['Labelshortname'] != array()) ? $xml['Labelshortname'] : "";

@@ -24,7 +24,7 @@ class ImportController extends Controller
     public function importLabels() {
         $labels = Label::listFromXml();
         foreach ($labels as $label) {
-            $dbLabel = Label::where('id' , $label["id"])->first();
+            $dbLabel = Label::where('labelId' , $label["labelId"])->first();
             if(!$dbLabel) {
                 $label = new Label($label);
                 $label->save();

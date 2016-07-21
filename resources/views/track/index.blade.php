@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <form action="tracks" method="GET">
+        <input type="text" name="search" placeholder="insert TRK_MANR" />
+        <button type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </form>
     <div class="table-responsive">
         <table class="table">
             <th>TRK_MANR</th>
@@ -30,5 +34,5 @@
     </div>
 </div>
 
-{!! $tracks->render() !!}
+{!! $tracks->appends(['search' => Illuminate\Support\Facades\Input::get('search')])->render() !!}
     @endsection

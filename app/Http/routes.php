@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/import', 'ImportController@import');
 Route::get('/tracks', 'TrackController@index');
-
-
+Route::get('/manufacturers', 'ManufacturerController@index');
+Route::get('/labels', 'LabelController@index');
 Route::get('/home', 'HomeController@index');
+

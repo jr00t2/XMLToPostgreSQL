@@ -9,8 +9,10 @@ use App\Http\Requests;
 
 class TrackController extends Controller
 {
-    public function index() {
-        $tracks = Track::paginate(15);
+    public function index(Request $request) {
+        $search = $request->get('search');
+
+        $tracks = Track::where('manr', 'like', "%$search%")->paginate(15);
 
         return view('track.index', ['tracks' => $tracks]);
     }
