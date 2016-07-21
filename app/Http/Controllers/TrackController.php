@@ -12,7 +12,7 @@ class TrackController extends Controller
     public function index(Request $request) {
         $search = $request->get('search');
 
-        $tracks = Track::where('manr', 'like', "%$search%")->paginate(15);
+        $tracks = Track::where('manr', 'like', "%$search%")->orWhere('track', 'like', "%$search%")->paginate(15);
 
         return view('track.index', ['tracks' => $tracks]);
     }
